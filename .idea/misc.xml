@@ -8,6 +8,11 @@
         <entry key="app/src/main/res/layout/activity_add_medication.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/star.xml" value="0.26614583333333336" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/item_list.xml" value="0.14868421052631578" />
+        <entry key="app/src/main/res/layout/slider_item.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1074561403508772" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1074561403508772" />
       </map>
     </option>
   </component>
