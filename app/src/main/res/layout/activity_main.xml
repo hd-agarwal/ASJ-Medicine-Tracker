@@ -32,6 +32,20 @@
         app:layout_constraintTop_toBottomOf="@+id/quote1" />
 
     <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Parth"
+        android:textColor="#EB9900"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserText"
+        app:layout_constraintStart_toEndOf="@+id/tvUsertitle"
+        app:layout_constraintTop_toBottomOf="@+id/quote1" />
+
+    <TextView
         android:id="@+id/tvUserText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,6 +77,28 @@
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/tvFeedback"
         app:layout_constraintTop_toBottomOf="@+id/tvHappinessScore" />
+
+    <TextView
+        android:id="@+id/tvSmileScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="70%"
+        android:textColor="#EB9900"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvSmileValue"
+        app:layout_constraintTop_toTopOf="@+id/tvSmileValue" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvSmileValue" />
 
     <TextView
         android:id="@+id/tvFeedback"
@@ -106,29 +142,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tvFeedback" />
 
     <TextView
-        android:id="@+id/tvSmileScore"
+        android:id="@+id/addMedicines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="70%"
-        android:textColor="#EB9900"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvSmileValue"
-        app:layout_constraintTop_toTopOf="@+id/tvSmileValue" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:backgroundTint="#E3A201"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="ADD YOUR MEDICINES"
+        android:textAlignment="viewStart"
+        android:textColor="#E3A201"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/afternoon"
-        app:srcCompat="@drawable/addbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTracker" />
 
     <Button
         android:id="@+id/evening"
@@ -165,17 +188,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addMedicines" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        app:backgroundTint="#E3A201"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/afternoon"
+        app:srcCompat="@drawable/addbutton" />
+
     <TextView
-        android:id="@+id/addMedicines"
+        android:id="@+id/orderMedicines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="ADD YOUR MEDICINES"
-        android:textAlignment="viewStart"
-        android:textColor="#E3A201"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="ORDER MEDICINES"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTracker" />
+        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
 
     <View
         android:id="@+id/view"
@@ -198,40 +235,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
-    <ProgressBar
-        android:id="@+id/pb"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvSmileValue" />
 
-    <TextView
-        android:id="@+id/orderMedicines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="ORDER MEDICINES"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
-
-    <TextView
-        android:id="@+id/tvUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Parth"
-        android:textColor="#EB9900"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvUserText"
-        app:layout_constraintStart_toEndOf="@+id/tvUsertitle"
-        app:layout_constraintTop_toBottomOf="@+id/quote1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
