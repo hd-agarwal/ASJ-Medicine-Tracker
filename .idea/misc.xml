@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_medical_services_24.xml" value="0.10701754385964912" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28751781796239495" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.14868421052631578" />
