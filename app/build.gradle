@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -29,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
 }
 
 dependencies {
@@ -45,9 +50,13 @@ dependencies {
     implementation 'com.github.smarteist:autoimageslider:1.4.0-appcompat'
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha02'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
-    implementation'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-RC'
-    implementation'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+
+    def room_version = "2.4.0"
+    kapt "androidx.room:room-compiler:2.4.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.room:room-ktx:2.4.0'
+
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
 
 }

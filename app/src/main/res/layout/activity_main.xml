@@ -8,15 +8,14 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="194dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvUsertitle"
@@ -162,8 +161,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
-        android:text="Morning"
         android:backgroundTint="#EB9900"
+        android:text="Morning"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addMedicines" />
 
@@ -236,5 +235,41 @@
         app:layout_constraintBottom_toTopOf="@+id/tvUserText"
         app:layout_constraintStart_toEndOf="@+id/tvUsertitle"
         app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/netmeds"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/netmeds2"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="7dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#EB9900"
+        app:civ_shadow_radius="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderMedicines" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/pharmeasy"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pharmeasy"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="7dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#EB9900"
+        app:civ_shadow_radius="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/netmeds"
+        app:layout_constraintTop_toBottomOf="@+id/orderMedicines" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
