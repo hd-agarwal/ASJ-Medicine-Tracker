@@ -8,4 +8,6 @@
     <string name="question5">Do you sleep for around 8hrs per day?</string>
     <string name="question4">Do you smoke?\n</string>
     <string name="heading">HEALTH QUIZ : THE MOMENT OF TRUTH</string>
+    <string name="answer_all_questions">Please answer all questions to proceed!</string>
+    <string name="submit">SUBMIT</string>
 </resources>

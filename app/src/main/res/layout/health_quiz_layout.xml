@@ -7,161 +7,31 @@
     tools:context=".HealthQuizActivity">
 
  <ImageView
-     android:id="@+id/background_image"
-     android:layout_width="0dp"
-     android:layout_height="0dp"
-     android:importantForAccessibility="no"
-     android:scaleType="centerCrop"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.0"
-     app:srcCompat="@drawable/background2" />
-
- <Button
-     android:id="@+id/button_q5_no"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="8dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:text="@string/no"
-     app:layout_constraintStart_toEndOf="@+id/button_q5_yes"
-     app:layout_constraintTop_toBottomOf="@+id/q5_text"
-     tools:ignore="DuplicateSpeakableTextCheck" />
-
- <Button
-     android:id="@+id/button_q5_yes"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="4dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:backgroundTint="@color/green"
-     android:text="@string/yes"
-     app:layout_constraintStart_toEndOf="@+id/button_q4_no"
-     app:layout_constraintTop_toBottomOf="@+id/q5_text"
-     app:rippleColor="@color/green"
-     tools:ignore="DuplicateSpeakableTextCheck" />
-
- <ImageView
-     android:id="@+id/q5_image"
-     android:layout_width="90dp"
-     android:layout_height="90dp"
-     android:contentDescription="@string/question5"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toEndOf="@+id/q3_image"
-     app:layout_constraintTop_toBottomOf="@+id/q3_image"
-     app:layout_constraintVertical_bias="0.4"
-     app:srcCompat="@drawable/sleeping" />
-
- <TextView
-     android:id="@+id/q5_text"
-     android:layout_width="0dp"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="8dp"
-     android:padding="5dp"
-     android:text="@string/question5"
-     android:textAlignment="center"
-     app:layout_constraintEnd_toEndOf="@+id/button_q5_no"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toStartOf="@+id/button_q5_yes"
-     app:layout_constraintTop_toBottomOf="@id/q5_image"
-     tools:text="Question 5" />
-
- <Button
-     android:id="@+id/button_q4_no"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="8dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:text="@string/no"
-     app:layout_constraintStart_toEndOf="@+id/button_q4_yes"
-     app:layout_constraintTop_toBottomOf="@+id/q4_text" />
-
- <Button
-     android:id="@+id/button_q4_yes"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="24dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:backgroundTint="@color/green"
-     android:text="@string/yes"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/q4_text"
-     app:rippleColor="@color/green" />
-
- <ImageView
-     android:id="@+id/q4_image"
-     android:layout_width="90dp"
-     android:layout_height="90dp"
-     android:contentDescription="@string/question4"
-     android:scaleType="fitCenter"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toStartOf="@+id/q3_image"
-     app:layout_constraintHorizontal_bias="1.0"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/q3_image"
-     app:layout_constraintVertical_bias="0.4"
-     app:srcCompat="@drawable/cigarrete" />
-
- <TextView
-     android:id="@+id/q4_text"
-     android:layout_width="0dp"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="8dp"
-     android:padding="5dp"
-     android:text="@string/question4"
-     android:textAlignment="center"
-     app:layout_constraintEnd_toEndOf="@+id/button_q4_no"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toStartOf="@+id/button_q4_yes"
-     app:layout_constraintTop_toBottomOf="@id/q4_image"
-     tools:text="Question 4" />
-
- <Button
-     android:id="@+id/button_q3_no"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="4dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:text="@string/no"
-     app:layout_constraintStart_toEndOf="@+id/button_q3_yes"
-     app:layout_constraintTop_toBottomOf="@+id/q3_text" />
-
- <Button
-     android:id="@+id/button_q3_yes"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="112dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:backgroundTint="@color/button_background_color_yes"
-     android:text="@string/yes"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/q3_text"
-     app:rippleColor="@color/green" />
-
- <ImageView
      android:id="@+id/q3_image"
-     android:layout_width="90dp"
-     android:layout_height="90dp"
+     android:layout_width="70dp"
+     android:layout_height="70dp"
      android:contentDescription="@string/question3"
      android:scaleType="fitCenter"
      app:layout_constraintBottom_toBottomOf="parent"
      app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.501"
+     app:layout_constraintHorizontal_bias="0.498"
      app:layout_constraintStart_toStartOf="parent"
      app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.414"
+     app:layout_constraintVertical_bias="0.381"
      app:srcCompat="@drawable/water" />
+
+ <Button
+     android:id="@+id/button_q3_yes"
+     style="@style/btn_style_yes"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="112dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/yes"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/q3_text"
+     tools:ignore="DuplicateSpeakableTextCheck" />
 
  <TextView
      android:id="@+id/q3_text"
@@ -175,46 +45,110 @@
      app:layout_constraintHorizontal_bias="0.0"
      app:layout_constraintStart_toStartOf="@+id/button_q3_yes"
      app:layout_constraintTop_toBottomOf="@+id/q3_image"
-     app:layout_constraintVertical_bias="0.0"
+     app:layout_constraintVertical_bias="0.018"
      tools:text="Question 3" />
 
  <Button
-     android:id="@+id/button_q2_no"
+     android:id="@+id/button_q3_no"
+     style="@style/btn_style_no"
      android:layout_width="wrap_content"
      android:layout_height="65dp"
      android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/no"
+     app:layout_constraintStart_toEndOf="@+id/button_q3_yes"
+     app:layout_constraintTop_toBottomOf="@+id/q3_text"
+     tools:ignore="DuplicateSpeakableTextCheck" />
+
+ <Button
+     android:id="@+id/button_q1_yes"
+     style="@style/btn_style_yes"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="20dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/yes"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/q1_text" />
+
+ <Button
+     android:id="@+id/button_q4_yes"
+     style="@style/btn_style_yes"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="16dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/yes"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/q4_text" />
+
+ <Button
+     android:id="@+id/button_q4_no"
+     style="@style/btn_style_no"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/no"
+     app:layout_constraintStart_toEndOf="@+id/button_q4_yes"
+     app:layout_constraintTop_toBottomOf="@+id/q4_text" />
+
+ <TextView
+     android:id="@+id/q1_text"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
      android:layout_marginTop="4dp"
+     android:padding="5dp"
+     android:text="@string/question1"
+     android:textAlignment="center"
+     app:layout_constraintEnd_toEndOf="@+id/button_q1_no"
+     app:layout_constraintHorizontal_bias="0.0"
+     app:layout_constraintStart_toStartOf="@+id/button_q1_yes"
+     app:layout_constraintTop_toBottomOf="@id/q1_image"
+     tools:text="Question 1" />
+
+ <Button
+     android:id="@+id/button_q2_no"
+     style="@style/btn_style_no"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
      android:background="@drawable/star"
      android:text="@string/no"
      app:layout_constraintStart_toEndOf="@+id/button_q2_yes"
      app:layout_constraintTop_toBottomOf="@+id/q2_text" />
 
+ <TextView
+     android:id="@+id/q5_text"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="12dp"
+     android:padding="5dp"
+     android:text="@string/question5"
+     android:textAlignment="center"
+     app:layout_constraintEnd_toEndOf="@+id/button_q5_no"
+     app:layout_constraintHorizontal_bias="0.0"
+     app:layout_constraintStart_toStartOf="@+id/button_q5_yes"
+     app:layout_constraintTop_toBottomOf="@id/q5_image"
+     tools:text="Question 5" />
+
  <Button
-     android:id="@+id/button_q2_yes"
+     android:id="@+id/button_q5_yes"
+     style="@style/btn_style_yes"
      android:layout_width="wrap_content"
      android:layout_height="65dp"
-     android:layout_marginStart="12dp"
-     android:layout_marginTop="4dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
      android:background="@drawable/star"
-     android:backgroundTint="@color/green"
      android:text="@string/yes"
-     app:layout_constraintStart_toEndOf="@+id/button_q1_no"
-     app:layout_constraintTop_toBottomOf="@+id/q2_text"
-     app:rippleColor="@color/green" />
-
- <ImageView
-     android:id="@+id/q2_image"
-     android:layout_width="90dp"
-     android:layout_height="90dp"
-     android:contentDescription="@string/question2"
-     android:scaleType="fitCenter"
-     app:layout_constraintBottom_toBottomOf="@+id/q3_image"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toEndOf="@+id/q3_image"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.248"
-     app:srcCompat="@drawable/meditation" />
+     app:layout_constraintStart_toEndOf="@+id/button_q4_no"
+     app:layout_constraintTop_toBottomOf="@+id/q5_text"
+     tools:ignore="DuplicateSpeakableTextCheck" />
 
  <TextView
      android:id="@+id/q2_text"
@@ -230,57 +164,124 @@
      app:layout_constraintTop_toBottomOf="@id/q2_image"
      tools:text="Question 2" />
 
- <Button
-     android:id="@+id/button_q1_yes"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="20dp"
-     android:layout_marginTop="4dp"
+ <ImageView
+     android:id="@+id/q2_image"
+     android:layout_width="70dp"
+     android:layout_height="70dp"
+     android:contentDescription="@string/question2"
+     android:scaleType="fitCenter"
+     app:layout_constraintBottom_toBottomOf="@+id/q3_image"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.178"
+     app:layout_constraintStart_toEndOf="@+id/q3_image"
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintVertical_bias="0.242"
+     app:srcCompat="@drawable/meditation" />
 
-     android:background="@drawable/star"
-     android:drawableTint="@color/green"
-     android:text="@string/yes"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toBottomOf="@+id/q1_text" />
-
- <Button
-     android:id="@+id/button_q1_no"
-     android:layout_width="wrap_content"
-     android:layout_height="65dp"
-     android:layout_marginStart="4dp"
-     android:layout_marginTop="4dp"
-     android:background="@drawable/star"
-     android:text="@string/no"
-     app:layout_constraintStart_toEndOf="@+id/button_q1_yes"
-     app:layout_constraintTop_toBottomOf="@+id/q1_text" />
+ <TextView
+     android:id="@+id/q4_text"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="12dp"
+     android:padding="5dp"
+     android:text="@string/question4"
+     android:textAlignment="center"
+     app:layout_constraintEnd_toEndOf="@+id/button_q4_no"
+     app:layout_constraintHorizontal_bias="0.0"
+     app:layout_constraintStart_toStartOf="@+id/button_q4_yes"
+     app:layout_constraintTop_toBottomOf="@id/q4_image"
+     tools:text="Question 4" />
 
  <ImageView
      android:id="@+id/q1_image"
-     android:layout_width="90dp"
-     android:layout_height="90dp"
+     android:layout_width="70dp"
+     android:layout_height="70dp"
      android:contentDescription="@string/question1"
      android:scaleType="fitCenter"
      app:layout_constraintBottom_toBottomOf="@+id/q3_image"
      app:layout_constraintEnd_toStartOf="@+id/q3_image"
-     app:layout_constraintHorizontal_bias="1.0"
+     app:layout_constraintHorizontal_bias="0.71"
      app:layout_constraintStart_toStartOf="parent"
      app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.248"
+     app:layout_constraintVertical_bias="0.242"
      app:srcCompat="@drawable/fruits" />
 
- <TextView
-     android:id="@+id/q1_text"
-     android:layout_width="0dp"
+ <ImageView
+     android:id="@+id/q4_image"
+     android:layout_width="70dp"
+     android:layout_height="70dp"
+     android:contentDescription="@string/question4"
+     android:scaleType="fitCenter"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toStartOf="@+id/q3_image"
+     app:layout_constraintHorizontal_bias="0.71"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/q3_image"
+     app:layout_constraintVertical_bias="0.351"
+     app:srcCompat="@drawable/cigarrete" />
+
+ <Button
+     android:id="@+id/button_q2_yes"
+     style="@style/btn_style_yes"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/yes"
+     app:layout_constraintStart_toEndOf="@+id/button_q1_no"
+     app:layout_constraintTop_toBottomOf="@+id/q2_text" />
+
+ <ImageView
+     android:id="@+id/q5_image"
+     android:layout_width="70dp"
+     android:layout_height="70dp"
+     android:contentDescription="@string/question5"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.178"
+     app:layout_constraintStart_toEndOf="@+id/q3_image"
+     app:layout_constraintTop_toBottomOf="@+id/q3_image"
+     app:layout_constraintVertical_bias="0.351"
+     app:srcCompat="@drawable/sleeping" />
+
+ <Button
+     android:id="@+id/button_q5_no"
+     style="@style/btn_style_no"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/no"
+     app:layout_constraintStart_toEndOf="@+id/button_q5_yes"
+     app:layout_constraintTop_toBottomOf="@+id/q5_text"
+     tools:ignore="DuplicateSpeakableTextCheck" />
+
+ <Button
+     android:id="@+id/button_submit"
+     style="@style/btn_style_yes"
+     android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:layout_marginTop="4dp"
-     android:padding="5dp"
-     android:text="@string/question1"
-     android:textAlignment="center"
-     app:layout_constraintEnd_toEndOf="@+id/button_q1_no"
-     app:layout_constraintHorizontal_bias="0.0"
-     app:layout_constraintStart_toStartOf="@+id/button_q1_yes"
-     app:layout_constraintTop_toBottomOf="@id/q1_image"
-     tools:text="Question 1" />
+     android:layout_marginTop="20dp"
+     android:ellipsize="none"
+     android:text="@string/submit"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.498"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/button_q4_no" />
+
+ <Button
+     android:id="@+id/button_q1_no"
+     style="@style/btn_style_no"
+     android:layout_width="wrap_content"
+     android:layout_height="65dp"
+     android:layout_marginStart="4dp"
+     android:layout_marginTop="12dp"
+     android:background="@drawable/star"
+     android:text="@string/no"
+     app:layout_constraintStart_toEndOf="@+id/button_q1_yes"
+     app:layout_constraintTop_toBottomOf="@+id/q1_text" />
 
  <TextView
      android:id="@+id/heading"
