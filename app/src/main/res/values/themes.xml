@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">#000000</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="btn_style_yes" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/button_background_color_yes</item>
+    </style>
+    <style name="btn_style_no" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/button_background_color_no</item>
+    </style>
 </resources>
