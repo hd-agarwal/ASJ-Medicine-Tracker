@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_broken_image.xml" value="0.3484375" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.35104166666666664" />
+        <entry key="app/src/main/res/drawable/tick.xml" value="0.35104166666666664" />
+        <entry key="app/src/main/res/layout/activity_add_medication.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/affirmations_activity.xml" value="0.13541666666666666" />
+        <entry key="app/src/main/res/layout/grid_view_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/main_fragment.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/cross.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/star.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/tick.xml" value="0.26614583333333336" />
