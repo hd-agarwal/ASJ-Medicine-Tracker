@@ -12,6 +12,18 @@
         <entry key="app/src/main/res/layout/affirmations_activity.xml" value="0.13541666666666666" />
         <entry key="app/src/main/res/layout/grid_view_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/cross.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/star.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/tick.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/activity_add_medication.xml" value="0.264" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/health_quiz_layout.xml" value="0.264" />
+        <entry key="app/src/main/res/drawable/ic_baseline_medical_services_24.xml" value="0.10701754385964912" />
+        <entry key="app/src/main/res/drawable/round_button.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/item_list.xml" value="0.14868421052631578" />
+        <entry key="app/src/main/res/layout/slider_item.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1074561403508772" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1074561403508772" />
       </map>
     </option>
   </component>
