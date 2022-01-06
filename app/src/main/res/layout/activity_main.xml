@@ -44,8 +44,7 @@
         android:textColor="#EB9900"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tvUserText"
-        app:layout_constraintStart_toEndOf="@+id/tvUsertitle"
-        app:layout_constraintTop_toBottomOf="@+id/quote1" />
+        app:layout_constraintStart_toEndOf="@+id/tvUsertitle" />
 
     <TextView
         android:id="@+id/tvUserText"
@@ -236,33 +235,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
-
-
-    <TextView
-        android:id="@+id/orderMedicines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="ORDER MEDICINES"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
-
-    <TextView
-        android:id="@+id/tvUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Parth"
-        android:textColor="#EB9900"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvUserText"
-        app:layout_constraintStart_toEndOf="@+id/tvUsertitle"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

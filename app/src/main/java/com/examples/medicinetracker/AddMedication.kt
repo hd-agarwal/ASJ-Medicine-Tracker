@@ -6,7 +6,6 @@ import android.widget.*
 
 class AddMedication : AppCompatActivity() {
 
-    private var selectedButton: ImageButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
