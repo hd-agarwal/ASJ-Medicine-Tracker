@@ -3,7 +3,6 @@ package com.examples.medicinetracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import com.examples.medicinetracker.databinding.HealthQuizLayoutBinding
 
@@ -40,64 +39,80 @@ class HealthQuizActivity : AppCompatActivity() {
         var countClick10 = 0
 
         var score = 0
+        val selectOptionYes = "Yes! Selected."
+        val selectOptionNo = "No! Selected."
 
         binding.buttonQ1Yes.setOnClickListener {
-            if (countClick1 == 0) {
-                score += 20
-            }
             countClick1++
+            Toast.makeText(this, selectOptionYes, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ1No.setOnClickListener {
             countClick6++
+            Toast.makeText(this, selectOptionNo, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ2Yes.setOnClickListener {
-            if (countClick2 == 0) {
-                score += 20
-            }
             countClick2++
+            Toast.makeText(this, selectOptionYes, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ2No.setOnClickListener {
             countClick7++
+            Toast.makeText(this, selectOptionNo, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ3Yes.setOnClickListener {
-            if (countClick3 == 0) {
-                score += 20
-            }
             countClick3++
+            Toast.makeText(this, selectOptionYes, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ3No.setOnClickListener {
             countClick8++
+            Toast.makeText(this, selectOptionNo, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ4Yes.setOnClickListener {
-            if (countClick4 == 0) {
-                score += 20
-            }
             countClick4++
+            Toast.makeText(this, selectOptionYes, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ4No.setOnClickListener {
             countClick9++
+            Toast.makeText(this, selectOptionNo, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ5Yes.setOnClickListener {
-            if (countClick5 == 0) {
-                score += 20
-            }
             countClick5++
+            Toast.makeText(this, selectOptionYes, Toast.LENGTH_SHORT).show()
         }
 
         binding.buttonQ5No.setOnClickListener {
             countClick10++
+            Toast.makeText(this, selectOptionNo, Toast.LENGTH_SHORT).show()
+        }
+
+        fun calculateScore() {
+            if (countClick1 > countClick6) {
+                score += 20
+            }
+            if (countClick2 > countClick7) {
+                score += 20
+            }
+            if (countClick3 > countClick8) {
+                score += 20
+            }
+            if (countClick4 > countClick9) {
+                score += 20
+            }
+            if (countClick5 > countClick10) {
+                score += 20
+            }
         }
 
         binding.buttonSubmit.setOnClickListener {
-            if (countClick1 > 0 && countClick2 > 0 && countClick3 > 0 && countClick4 > 0 && countClick5 > 0) {
+            if (countClick1 - countClick6 != 0 && countClick2 - countClick7 != 0 && countClick3 - countClick8 != 0 && countClick4 - countClick9 != 0 && countClick5 - countClick10 != 0) {
+                calculateScore()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
