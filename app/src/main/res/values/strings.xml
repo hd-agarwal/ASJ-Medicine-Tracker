@@ -10,4 +10,5 @@
     <string name="heading">HEALTH QUIZ : THE MOMENT OF TRUTH</string>
     <string name="answer_all_questions">Please answer all questions to proceed!</string>
     <string name="submit">SUBMIT</string>
+    <string name="Name">Please enter your Name.</string>
 </resources>
