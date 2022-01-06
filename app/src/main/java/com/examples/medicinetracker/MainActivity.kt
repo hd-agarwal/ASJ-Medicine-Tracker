@@ -12,6 +12,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
+import com.examples.medicinetracker.affirmations.AffirmationsActivity
 import kotlinx.coroutines.delay
 import java.util.*
 
@@ -38,8 +39,14 @@ class MainActivity : AppCompatActivity() {
         prog()
 
         val addMedicationButton: FloatingActionButton = findViewById(R.id.addMedication)
+//        addMedicationButton.setOnClickListener {
+//            val intent = Intent(this ,AddMedication::class.java)
+//            startActivity(intent)
+//        }
+
+        // Temp
         addMedicationButton.setOnClickListener {
-            val intent = Intent(this ,AddMedication::class.java)
+            val intent = Intent(this , AffirmationsActivity::class.java)
             startActivity(intent)
         }
     }
