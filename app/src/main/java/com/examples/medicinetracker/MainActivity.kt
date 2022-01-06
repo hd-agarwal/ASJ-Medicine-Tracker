@@ -21,6 +21,7 @@ import android.widget.ImageView
 var counter = 0
 
 class MainActivity : AppCompatActivity() {
+    lateinit var userViewModel:UserInformationViewModel
     private lateinit var viewPager: ViewPager2
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             viewModel.isLoading.value
         }
         setContentView(R.layout.activity_main)
+
+        //      Database Score Name, Medicines
+        val userName: TextView = findViewById(R.id.tvUserName)
+        val smileScore: TextView = findViewById(R.id.tvSmileScore)
+        val feedback: TextView = findViewById(R.id.tvFeedbackText)
 
 //      Removing Action Bar
         supportActionBar?.hide()
@@ -72,10 +78,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = adapter
         viewPager.autoScroll(lifecycleScope, 2500)
 
-//      Database Score Name, Medicines
-        val userName: TextView = findViewById(R.id.tvUserName)
-        val SmileScore: TextView = findViewById(R.id.tvSmileScore)
-        val feedback: TextView = findViewById(R.id.tvFeedbackText)
+
 
 
 //        Progress Bar
