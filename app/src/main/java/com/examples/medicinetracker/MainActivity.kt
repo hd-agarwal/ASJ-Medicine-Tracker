@@ -14,24 +14,41 @@ import kotlinx.coroutines.delay
 import java.util.*
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 var counter = 0
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        val TAG="MainActivity";
+    }
     lateinit var userViewModel:UserInformationViewModel
     private lateinit var viewPager: ViewPager2
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+       userViewModel = UserInformationViewModel(application)
         //Splash Screen
         installSplashScreen().apply {
             viewModel.isLoading.value
         }
         setContentView(R.layout.activity_main)
+
+        //Check condition for creating the activity or not
+//        Log.d(TAG, "onCreate:  ${userViewModel.allNames}")
+
+        userViewModel.allNames.observe(this, androidx.lifecycle.Observer {
+            Log.d(TAG, "onCreate:  ${it}")
+            if(it.isEmpty())
+            {
+                startActivity(Intent(this@MainActivity,HealthQuizActivity::class.java))
+            }
+        })
+
 
         //      Database Score Name, Medicines
         val userName: TextView = findViewById(R.id.tvUserName)
@@ -64,6 +81,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+        //Medication Button
+        val addMedicationButton: FloatingActionButton = findViewById(R.id.addMedication)
+        addMedicationButton.setOnClickListener {
+            val intent = Intent(this ,AddMedication::class.java)
+            startActivity(intent)
+        }
 
 //      Image Slider
         viewPager = findViewById(R.id.viewPager2)

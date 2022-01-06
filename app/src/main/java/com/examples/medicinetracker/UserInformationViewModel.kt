@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UserInformationViewModel(application: Application) : AndroidViewModel(application) {
-    val repository: DatabaseRepository = TODO()
+    lateinit var repository: DatabaseRepository
     val allNames: LiveData<List<UserInformation>>
     val allMedicines: LiveData<List<MedicineInformation>>
 
