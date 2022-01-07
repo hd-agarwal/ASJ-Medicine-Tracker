@@ -16,37 +16,24 @@
 
 package com.examples.medicinetracker.affirmations
 
-import android.media.Image
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.examples.medicinetracker.R
 import com.examples.medicinetracker.affirmations.network.Affirmation
 import com.examples.medicinetracker.affirmations.network.AffirmationImage
+import com.examples.medicinetracker.affirmations.network.Fact
 import com.examples.medicinetracker.affirmations.ui.main.*
-//import com.examples.medicinetracker.affirmations.ui.main.PhotoGridAdapter
-
-/**
- * Updates the data shown in the [RecyclerView].
- */
-//@BindingAdapter("listData")
-//fun bindRecyclerView(recyclerView: RecyclerView, data: List<Affirmation>?, images: List<AffirmationImage>) {
-//    val adapter = recyclerView.adapter as PhotoGridAdapter
-//    adapter.submitList(data)
-//}
+import com.examples.medicinetracker.affirmations.ui.main.AffirmationsAdapter
+import com.examples.medicinetracker.affirmations.ui.main.facts.FactsAdapter
+import com.examples.medicinetracker.affirmations.ui.main.FactsStatus
 
 @BindingAdapter("listData", "imageData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Affirmation>?, images: List<AffirmationImage>?) {
-//    val ad = recyclerView.adapter
-
-//    val adapter = recyclerView.adapter as ImagesGridAdapter
-
-//    adapter.submitList(images)
 
     if(data != null && images != null){
         val adapter = AffirmationsAdapter(data, images)
@@ -54,11 +41,14 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Affirmation>?, image
     }
 }
 
-//@BindingAdapter("imageData")
-//fun bindRecyclerViewer(recyclerView: RecyclerView, data: List<AffirmationImage>?) {
-//    val adapter = recyclerView.adapter as ImagesGridAdapter
-//    adapter.submitList(data)
-//}
+@BindingAdapter("factsData")
+fun bindRecyclerView2(recyclerView: RecyclerView, data: List<Fact>?) {
+
+    if(data != null){
+        val adapter = FactsAdapter(data)
+        recyclerView.adapter = adapter
+    }
+}
 
 @BindingAdapter("quote")
 fun bindQuote(textView: TextView, quote: String?) {
@@ -74,6 +64,30 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
         imgView.load(imgUri) {
             placeholder(R.drawable.loading_animation)
             error(R.drawable.ic_broken_image)
+        }
+    }
+}
+
+@BindingAdapter("fact")
+fun bindFact(textView: TextView, fact: String?) {
+    fact?.let {
+        textView.text = fact
+    }
+}
+
+@BindingAdapter("factsApiStatus")
+fun bindFactStatus(statusImageView: ImageView, status: FactsStatus?) {
+    when (status) {
+        FactsStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+        FactsStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        FactsStatus.DONE -> {
+            statusImageView.visibility = View.GONE
         }
     }
 }

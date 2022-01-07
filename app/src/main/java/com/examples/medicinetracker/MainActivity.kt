@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import android.widget.ImageButton
 
 import android.widget.ProgressBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         prog()
 
         val addMedicationButton: FloatingActionButton = findViewById(R.id.addMedication)
-//        addMedicationButton.setOnClickListener {
-//            val intent = Intent(this ,AddMedication::class.java)
-//            startActivity(intent)
-//        }
-
-        // Temp
         addMedicationButton.setOnClickListener {
+            val intent = Intent(this , AddMedication::class.java)
+            startActivity(intent)
+        }
+
+        val affirmationsButton: ImageButton = findViewById(R.id.quotes)
+        affirmationsButton.setOnClickListener {
             val intent = Intent(this , AffirmationsActivity::class.java)
             startActivity(intent)
         }

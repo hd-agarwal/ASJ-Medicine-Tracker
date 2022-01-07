@@ -1,12 +1,11 @@
 package com.examples.medicinetracker.affirmations.ui.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.examples.medicinetracker.affirmations.network.Affirmation
 import com.examples.medicinetracker.affirmations.network.AffirmationImage
+import com.examples.medicinetracker.affirmations.ui.main.AffirmationsAdapter
 import com.examples.medicinetracker.databinding.GridViewItemBinding
 
 class AffirmationsAdapter(
