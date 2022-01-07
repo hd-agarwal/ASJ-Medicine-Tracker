@@ -1,28 +1,22 @@
-package com.examples.medicinetracker.affirmations.ui.main
+package com.examples.medicinetracker.affirmations.ui.main.facts
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.ConcatAdapter
-import com.examples.medicinetracker.R
-import com.examples.medicinetracker.affirmations.ui.main.facts.FactsViewModel
-import com.examples.medicinetracker.databinding.AffirmationsActivityBinding
-import com.examples.medicinetracker.databinding.MainFragmentBinding
+import com.examples.medicinetracker.databinding.FragmentFactsBinding
 
-class AffirmationsFragment : Fragment() {
+class FactsFragment : Fragment() {
 
-    private val viewModel: AffirmationViewModel by viewModels()
+    private val viewModel: FactsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = MainFragmentBinding.inflate(inflater)
-//        val binding = AffirmationsActivityBinding.inflate(inflater)
+        val binding = FragmentFactsBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
