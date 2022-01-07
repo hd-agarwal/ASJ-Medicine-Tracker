@@ -13,6 +13,7 @@
         android:theme="@style/Theme.MedicineTracker">
         <activity
             android:name=".DisplayMedicinesDetails"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".AddMedication"
