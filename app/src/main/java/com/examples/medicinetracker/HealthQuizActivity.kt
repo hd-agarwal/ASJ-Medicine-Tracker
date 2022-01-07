@@ -36,8 +36,6 @@ class HealthQuizActivity : AppCompatActivity() {
         val answerList = arrayOf<String>("", "", "", "", "")
         var name = ""
         var score = 0
-        val selectOptionYes = "Yes! Selected."
-        val selectOptionNo = "No! Selected."
         val background = binding.buttonQ1No.background
 
         binding.buttonQ1Yes.setOnClickListener {

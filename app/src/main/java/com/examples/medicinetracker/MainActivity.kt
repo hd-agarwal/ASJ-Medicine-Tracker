@@ -1,9 +1,11 @@
 package com.examples.medicinetracker
-
 import android.graphics.Color
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.ImageButton
+import android.widget.ProgressBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
@@ -16,7 +18,6 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import com.examples.medicinetracker.affirmations.AffirmationsActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 
@@ -36,6 +37,21 @@ class MainActivity : AppCompatActivity() {
     val list=ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+//      Removing Action Bar
+        supportActionBar?.hide()
+
+        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .getBoolean("isFirstRun", true)
+
+        if (isFirstRun) {
+            startActivity(Intent(this, HealthQuizActivity::class.java))
+        }
+
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+            .putBoolean("isFirstRun", false).apply()
+
 
         allViewModel = AllInformationViewModel(application)
 
