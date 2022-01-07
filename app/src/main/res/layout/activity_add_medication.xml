@@ -176,6 +176,7 @@
 
 
         <RadioButton
+            android:id="@+id/beforemeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -186,6 +187,7 @@
             android:textSize="14sp" />
 
         <RadioButton
+            android:id="@+id/withfood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -196,6 +198,7 @@
             android:textSize="14sp" />
 
         <RadioButton
+            android:id="@+id/aftermeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

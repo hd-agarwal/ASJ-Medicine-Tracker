@@ -2,16 +2,34 @@ package com.examples.medicinetracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_add_medication.*
 
 class AddMedication : AppCompatActivity() {
 
     private var selectedButton: ImageButton? = null
-
+    lateinit var proceed:Button
+    lateinit var medicine:EditText
+    lateinit var cbMorning:CheckBox
+    lateinit var cbAfternoon:CheckBox
+    lateinit var cbEvening:CheckBox
+    lateinit var medicineTypes:RadioGroup
+    lateinit var medicinetimetypes:RadioGroup
+    lateinit var allViewModel:AllInformationViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        allViewModel = AllInformationViewModel(application)
         setContentView(R.layout.activity_add_medication)
         supportActionBar?.hide()
+        proceed=findViewById(R.id.add_medicine)
+        medicine=findViewById(R.id.med_name)
+        cbMorning=findViewById(R.id.cbMorning)
+        cbAfternoon=findViewById(R.id.cbAfternoon)
+        cbEvening=findViewById(R.id.cbEvening)
+        medicineTypes=findViewById(R.id.medicine_types)
+        medicinetimetypes=findViewById(R.id.medicinegroup)
+
         val tablet: RadioButton = findViewById(R.id.tablet)
         handleMedicineType(tablet, "Tablet")
         val pill: RadioButton = findViewById(R.id.pill)
@@ -20,6 +38,7 @@ class AddMedication : AppCompatActivity() {
         handleMedicineType(syrup, "Syrup")
         val inhaler: RadioButton = findViewById(R.id.inhaler)
         handleMedicineType(inhaler, "Inhaler")
+
         val medicineTypes : RadioGroup = findViewById(R.id.medicine_types)
         medicineTypes.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId) {
@@ -50,6 +69,38 @@ class AddMedication : AppCompatActivity() {
             }
         }
 
+        proceed.setOnClickListener {
+            if(medicine.text.toString().isEmpty())
+            {
+                Toast.makeText(this,"Please Enter the Medicine Name",Toast.LENGTH_SHORT).show()
+            }
+            else if(cbMorning.isChecked==false&&cbAfternoon.isChecked==false&&cbEvening.isChecked==false)
+            {
+                Toast.makeText(this,"Please select atleast one (Morning/Afternoon/Evening)",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                val title=medicine.text.toString()
+                Log.d("TAG","${medicineTypes.checkedRadioButtonId}")
+                var description=
+                when(medicineTypes.checkedRadioButtonId)
+                {
+                    R.id.pill->{"pill"}
+                    R.id.tablet->{"tablet"}
+                    R.id.inhaler->{"inhaler"}
+                    R.id.syrup->{"syrup"}
+                    else->""
+                }+when(medicinetimetypes.checkedRadioButtonId)
+                {
+                    R.id.beforemeal->{"Before Meal"}
+                    R.id.withfood->{"With Food"}
+                    R.id.aftermeal->{"After Meal"}
+                    else->""
+                }
+                val medicineInformation=MedicineInformation(title,description,0,cbMorning.isChecked,cbAfternoon.isChecked,cbEvening.isChecked)
+                allViewModel.insertMeds(medicineInformation)
+            }
+        finish()
+        }
     }
 
     private fun handleMedicineType(button: RadioButton, toast: String){

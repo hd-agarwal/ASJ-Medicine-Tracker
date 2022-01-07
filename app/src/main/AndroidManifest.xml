@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.examples.medicinetracker">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedicineTracker">
         <activity
+            android:name=".DisplayMedicinesDetails"
+            android:exported="false" />
+        <activity
             android:name=".AddMedication"
             android:exported="false" />
         <activity
-            android:name=".HealthQuizActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.App.Starting"
-            android:exported="true">
+            android:name=".HealthQuizActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

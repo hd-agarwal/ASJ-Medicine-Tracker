@@ -4,14 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.examples.medicinetracker.databinding.HealthQuizLayoutBinding
 
 
 class HealthQuizActivity : AppCompatActivity() {
-
+    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        //Splash Screen
+        installSplashScreen().apply {
+            viewModel.isLoading.value
+        }
         val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
             .getBoolean("isFirstRun", true)
 
@@ -24,6 +29,7 @@ class HealthQuizActivity : AppCompatActivity() {
             .putBoolean("isFirstRun", false).apply()
 
         val binding = HealthQuizLayoutBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
         supportActionBar?.hide()
 

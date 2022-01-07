@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserInformationViewModel(application: Application) : AndroidViewModel(application) {
+class AllInformationViewModel(application: Application) : AndroidViewModel(application) {
     lateinit var repository: DatabaseRepository
     val allNames: LiveData<List<UserInformation>>
     val allMedicines: LiveData<List<MedicineInformation>>

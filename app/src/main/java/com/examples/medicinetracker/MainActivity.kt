@@ -16,6 +16,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -26,37 +27,66 @@ class MainActivity : AppCompatActivity() {
     companion object{
         val TAG="MainActivity";
     }
-    lateinit var userViewModel:UserInformationViewModel
+    lateinit var allViewModel:AllInformationViewModel
     private lateinit var viewPager: ViewPager2
-    private val viewModel: MainViewModel by viewModels()
+
+    lateinit var morning: Button
+    lateinit var afternoon: Button
+    lateinit var evening: Button
+    lateinit var userName: TextView
+    lateinit var smileScore: TextView
+    lateinit var feedback: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       userViewModel = UserInformationViewModel(application)
-        //Splash Screen
-        installSplashScreen().apply {
-            viewModel.isLoading.value
-        }
+
+        allViewModel = AllInformationViewModel(application)
+
         setContentView(R.layout.activity_main)
+        //      Removing Action Bar
+        supportActionBar?.hide()
+
+        morning =findViewById(R.id.morning)
+        afternoon =findViewById(R.id.afternoon)
+        evening =findViewById(R.id.evening)
+        //      Database Score Name, Medicines
+        userName= findViewById(R.id.tvUserName)
+        smileScore= findViewById(R.id.tvSmileScore)
+        feedback= findViewById(R.id.tvFeedback)
 
         //Check condition for creating the activity or not
 //        Log.d(TAG, "onCreate:  ${userViewModel.allNames}")
 
-        userViewModel.allNames.observe(this, androidx.lifecycle.Observer {
+        allViewModel.allNames.observe(this, androidx.lifecycle.Observer {
             Log.d(TAG, "onCreate:  ${it}")
-            if(it.isEmpty())
+
+        })
+        allViewModel.allMedicines.observe(this, androidx.lifecycle.Observer {
+            Log.d(TAG,"${it}")
+
+            var morningList=it.filter{ medit->medit.DoseMorning}
+            var afternoonList=it.filter{ medit->medit.DoseAfter}
+            var eveningList=it.filter{ medit->medit.DoseEvening}
+
+
+            Log.d(TAG,"${morningList}")
+
+            for(meds in it)
             {
-                startActivity(Intent(this@MainActivity,HealthQuizActivity::class.java))
             }
         })
+        morning.setOnClickListener { var i:Intent =Intent(this,DisplayMedicinesDetails::class.java)
+            i.putExtra("time","morning")
+            startActivity(i)
+        }
+        afternoon.setOnClickListener { var i:Intent =Intent(this,DisplayMedicinesDetails::class.java)
+            i.putExtra("time","afternoon")
+            startActivity(i)  }
 
+        evening.setOnClickListener { var i:Intent =Intent(this,DisplayMedicinesDetails::class.java)
+            i.putExtra("time","evening")
+            startActivity(i) }
 
-        //      Database Score Name, Medicines
-        val userName: TextView = findViewById(R.id.tvUserName)
-        val smileScore: TextView = findViewById(R.id.tvSmileScore)
-        val feedback: TextView = findViewById(R.id.tvFeedbackText)
-
-//      Removing Action Bar
-        supportActionBar?.hide()
 
         // Netmeds link
         val netmedsimg: ImageView = findViewById<View>(R.id.netmeds) as ImageView
@@ -102,7 +132,12 @@ class MainActivity : AppCompatActivity() {
         viewPager.autoScroll(lifecycleScope, 2500)
 
 
-
+        val list=ArrayList<String>()
+        list.add("");
+        list.add("");
+        list.add("");
+        list.add("");
+        list.add("");
 
 //        Progress Bar
         prog()
