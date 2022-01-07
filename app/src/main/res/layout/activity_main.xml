@@ -54,15 +54,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#E3A201"
         android:fontFamily="@font/poppins_bold"
         android:text="Hi"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        android:backgroundTint="#E3A201"/>
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <TextView
         android:id="@+id/tvUserName"
@@ -95,7 +94,6 @@
         android:fontFamily="@font/poppins_bold"
         android:text="HAPPINESS SCORE"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/tvSmileValue"
         app:layout_constraintTop_toBottomOf="@+id/tvUserText" />
@@ -106,7 +104,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
         android:text="Smile Value:"
-        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/tvFeedback"
         app:layout_constraintTop_toBottomOf="@+id/tvHappinessScore" />
 
@@ -154,7 +151,6 @@
         android:layout_marginTop="50dp"
         android:fontFamily="@font/poppins_medium"
         android:text="ALL IS WELL"
-        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/tvFeedback"
         app:layout_constraintTop_toBottomOf="@+id/tvSmileValue" />
@@ -167,7 +163,6 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="TRACKER"
-        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -241,7 +236,6 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:text="ORDER MEDICINES"
-        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addMedication" />
@@ -261,7 +255,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
         android:text="An Initiative By GDSC-DTU"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
