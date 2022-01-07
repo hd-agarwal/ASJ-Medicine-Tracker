@@ -10,9 +10,13 @@ import com.examples.medicinetracker.databinding.HealthQuizLayoutBinding
 
 
 class HealthQuizActivity : AppCompatActivity() {
+    lateinit var allViewModel: AllInformationViewModel
+
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        allViewModel = AllInformationViewModel(application)
+
         //Splash Screen
         installSplashScreen().apply {
             viewModel.isLoading.value
@@ -28,8 +32,6 @@ class HealthQuizActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
 
         val answerList = arrayOf<String>("", "", "", "", "")
         var name = ""
@@ -98,9 +100,9 @@ class HealthQuizActivity : AppCompatActivity() {
         }
 
         fun calculateScore() {
-            for(answer in answerList){
-                if(answer == "yes")
-                    score+=20
+            for (answer in answerList) {
+                if (answer == "yes")
+                    score += 20
             }
         }
 
@@ -108,23 +110,26 @@ class HealthQuizActivity : AppCompatActivity() {
 
             name = binding.nameUser.text.toString()
 
-            if(name == ""){
+            if (name == "") {
                 val toastString = "Please, enter your Name to continue!"
                 Toast.makeText(this, toastString, Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
-            for(answer in answerList)
-            {
-                if(answer == ""){
+            for (answer in answerList) {
+                if (answer == "") {
                     val toastString = "Please, answer all questions to continue!"
                     Toast.makeText(this, toastString, Toast.LENGTH_LONG).show()
                     return@setOnClickListener
                 }
             }
-                calculateScore()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+            calculateScore()
+
+            val userInformation = UserInformation(name, score)
+            allViewModel.insertName(userInformation)
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).apply()
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

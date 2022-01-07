@@ -20,7 +20,7 @@ class DisplayMedicinesDetails : AppCompatActivity() {
         this.setTitle(intent.getStringExtra("time"))
         rcview = findViewById(R.id.rvDetails)
         allViewModel = AllInformationViewModel(application)
-        val time = intent.getStringExtra("time")
+        var time = intent.getStringExtra("time")
         Log.d("TAG", "${time}")
         lateinit var filteredlist: List<MedicineInformation>
 

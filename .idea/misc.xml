@@ -8,12 +8,12 @@
         <entry key="app/src/main/res/drawable/non_active_dot.xml" value="0.19722222222222222" />
         <entry key="app/src/main/res/drawable/round_button.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_add_medication.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_display_medicines_details.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_display_medicines_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/health_quiz_layout.xml" value="0.11228070175438597" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.14868421052631578" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/medicine_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/medicine_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/slider_item.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1074561403508772" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1074561403508772" />

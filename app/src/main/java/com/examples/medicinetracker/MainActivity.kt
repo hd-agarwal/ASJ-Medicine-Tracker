@@ -21,7 +21,6 @@ import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-var counter = 0
 
 class MainActivity : AppCompatActivity() {
     companion object{
@@ -29,14 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
     lateinit var allViewModel:AllInformationViewModel
     private lateinit var viewPager: ViewPager2
-
     lateinit var morning: Button
     lateinit var afternoon: Button
     lateinit var evening: Button
     lateinit var userName: TextView
     lateinit var smileScore: TextView
     lateinit var feedback: TextView
-
+    var counter=0
+    val list=ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -52,14 +51,17 @@ class MainActivity : AppCompatActivity() {
         //      Database Score Name, Medicines
         userName= findViewById(R.id.tvUserName)
         smileScore= findViewById(R.id.tvSmileScore)
-        feedback= findViewById(R.id.tvFeedback)
+        feedback= findViewById(R.id.tvFeedbackText)
 
         //Check condition for creating the activity or not
 //        Log.d(TAG, "onCreate:  ${userViewModel.allNames}")
 
         allViewModel.allNames.observe(this, androidx.lifecycle.Observer {
             Log.d(TAG, "onCreate:  ${it}")
-
+            for (medObject in it) {
+                userName.setText(medObject.name.toString())
+                smileScore.setText(medObject.score.toString())
+            }
         })
         allViewModel.allMedicines.observe(this, androidx.lifecycle.Observer {
             Log.d(TAG,"${it}")
@@ -132,15 +134,15 @@ class MainActivity : AppCompatActivity() {
         viewPager.autoScroll(lifecycleScope, 2500)
 
 
-        val list=ArrayList<String>()
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
+
+        list.add("ALL IS WELL");
+        list.add("YO THATS SICK");
+        list.add("YOU BETTER NOT GIVE UP");
+        list.add("COOOOOL");
+        list.add("AMAZING");
 
 //        Progress Bar
-        prog()
+        prog(smileScore.getText().toString().toInt())
 
         // Color Change for the ProgressBar
 
@@ -170,17 +172,27 @@ class MainActivity : AppCompatActivity() {
 
 
     //Progress Bar
-    fun prog() {
+    fun prog(value:Int) {
         val pb: ProgressBar = findViewById(R.id.pb)
         val t = Timer()
+        counter=0
         val tt: TimerTask = object : TimerTask() {
             override fun run() {
                 counter++
                 pb.progress = counter
-                if (counter == 70) t.cancel()
+                if (counter == value) t.cancel()
             }
         }
         t.schedule(tt, 0, 25)
+
+        when(value)
+        {
+           in 0..20->{feedback.setText(list[0])}
+           in 20..40->{feedback.setText(list[1])}
+           in 40..60->{feedback.setText(list[2])}
+           in 60..80->{feedback.setText(list[3])}
+           in 80..100->{feedback.setText(list[4])}
+        }
     }
 
 }

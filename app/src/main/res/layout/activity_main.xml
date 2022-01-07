@@ -117,11 +117,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="70%"
+        android:text="70"
         android:textColor="#EB9900"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvSmileValue"
         app:layout_constraintTop_toTopOf="@+id/tvSmileValue" />
+    <TextView
+    android:id="@+id/tvSmileScorePercent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/poppins_medium"
+    android:text="%"
+    android:textColor="#EB9900"
+    android:textStyle="bold"
+    app:layout_constraintStart_toEndOf="@+id/tvSmileScore"
+    app:layout_constraintTop_toTopOf="@+id/tvSmileValue" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addMedication"

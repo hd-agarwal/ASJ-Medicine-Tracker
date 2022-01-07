@@ -9,7 +9,7 @@ interface UserInformationDao {
     @Query("SELECT * FROM UserInformation ORDER BY name ASC")
     fun getAllNames(): LiveData<List<UserInformation>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
      fun insert(name:UserInformation)
 
     @Delete
