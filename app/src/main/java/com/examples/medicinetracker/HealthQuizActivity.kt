@@ -15,11 +15,9 @@ class HealthQuizActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val answerList = arrayOf<String>("", "", "", "", "")
+        val answerList = arrayOf("", "", "", "", "")
         var name = ""
         var score = 0
-        val selectOptionYes = "Yes! Selected."
-        val selectOptionNo = "No! Selected."
         val background = binding.buttonQ1No.background
 
         binding.buttonQ1Yes.setOnClickListener {
