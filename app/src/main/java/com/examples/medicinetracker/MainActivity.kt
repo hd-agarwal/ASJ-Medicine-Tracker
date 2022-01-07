@@ -2,8 +2,6 @@ package com.examples.medicinetracker
 
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -16,8 +14,8 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
+import android.widget.*
+import com.examples.medicinetracker.affirmations.AffirmationsActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
@@ -116,7 +114,13 @@ class MainActivity : AppCompatActivity() {
         //Medication Button
         val addMedicationButton: FloatingActionButton = findViewById(R.id.addMedication)
         addMedicationButton.setOnClickListener {
-            val intent = Intent(this ,AddMedication::class.java)
+            val intent = Intent(this , AddMedication::class.java)
+            startActivity(intent)
+        }
+
+        val affirmationsButton: ImageButton = findViewById(R.id.quotes)
+        affirmationsButton.setOnClickListener {
+            val intent = Intent(this , AffirmationsActivity::class.java)
             startActivity(intent)
         }
 
