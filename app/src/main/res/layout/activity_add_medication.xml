@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Morning"
-            android:buttonTint="?attr/colorPrimary"
+            android:buttonTint="#EB9900"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <CheckBox
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Afternoon"
-            android:buttonTint="?attr/colorPrimary"
+            android:buttonTint="#EB9900"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
           />
 
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Evening"
-            android:buttonTint="?attr/colorPrimary"
+            android:buttonTint="#EB9900"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
            />
     </LinearLayout>

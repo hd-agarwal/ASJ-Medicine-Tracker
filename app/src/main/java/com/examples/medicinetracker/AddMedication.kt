@@ -78,28 +78,30 @@ class AddMedication : AppCompatActivity() {
             {
                 Toast.makeText(this,"Please select atleast one (Morning/Afternoon/Evening)",Toast.LENGTH_SHORT).show()
             }
+
             else{
                 val title=medicine.text.toString()
                 Log.d("TAG","${medicineTypes.checkedRadioButtonId}")
                 var description=
                 when(medicineTypes.checkedRadioButtonId)
                 {
-                    R.id.pill->{"pill"}
-                    R.id.tablet->{"tablet"}
-                    R.id.inhaler->{"inhaler"}
-                    R.id.syrup->{"syrup"}
+                    R.id.pill->{"Pill"}
+                    R.id.tablet->{"Tablet"}
+                    R.id.inhaler->{"Inhaler"}
+                    R.id.syrup->{"Syrup"}
                     else->""
                 }+when(medicinetimetypes.checkedRadioButtonId)
                 {
-                    R.id.beforemeal->{"Before Meal"}
-                    R.id.withfood->{"With Food"}
-                    R.id.aftermeal->{"After Meal"}
+                    R.id.beforemeal->{"\nBefore Meal"}
+                    R.id.withfood->{"\nWith Food"}
+                    R.id.aftermeal->{"\nAfter Meal"}
                     else->""
                 }
                 val medicineInformation=MedicineInformation(title,description,0,cbMorning.isChecked,cbAfternoon.isChecked,cbEvening.isChecked)
                 allViewModel.insertMeds(medicineInformation)
+                finish()
             }
-        finish()
+
         }
     }
 

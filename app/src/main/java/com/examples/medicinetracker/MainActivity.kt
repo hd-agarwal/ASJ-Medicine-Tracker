@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
                 if (counter == 70) t.cancel()
             }
         }
-        t.schedule(tt, 0, 50)
+        t.schedule(tt, 0, 25)
     }
 
 }

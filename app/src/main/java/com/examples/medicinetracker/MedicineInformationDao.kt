@@ -9,7 +9,7 @@ interface MedicineInformationDao {
     @Query("SELECT * FROM MedicineInformation ORDER BY id ASC")
     fun getAllMedicines(): LiveData<List<MedicineInformation>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(name:MedicineInformation)
 
     @Delete
