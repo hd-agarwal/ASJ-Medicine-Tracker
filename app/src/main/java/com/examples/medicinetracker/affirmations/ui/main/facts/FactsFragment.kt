@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.examples.medicinetracker.affirmations.ui.main.AffirmationViewModel
 import com.examples.medicinetracker.databinding.FragmentFactsBinding
 
 class FactsFragment : Fragment() {
 
-    private val viewModel: FactsViewModel by viewModels()
+    private val viewModel: AffirmationViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

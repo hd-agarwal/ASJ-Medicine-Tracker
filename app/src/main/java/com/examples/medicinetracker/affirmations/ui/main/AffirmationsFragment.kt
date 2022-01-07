@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import com.examples.medicinetracker.R
-import com.examples.medicinetracker.affirmations.ui.main.facts.FactsViewModel
 import com.examples.medicinetracker.databinding.AffirmationsActivityBinding
 import com.examples.medicinetracker.databinding.MainFragmentBinding
 

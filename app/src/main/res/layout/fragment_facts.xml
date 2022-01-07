@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.examples.medicinetracker.affirmations.ui.main.facts.FactsViewModel" />
+            type="com.examples.medicinetracker.affirmations.ui.main.AffirmationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +27,8 @@
             app:factsData="@{viewModel.facts}"
             app:spanCount="2"
             tools:itemCount="16"
-            tools:listitem="@layout/grid_view_item" />
+            tools:listitem="@layout/grid_view_item"
+            android:layout_marginBottom="50dp"/>
 
         <ImageView
             android:id="@+id/status_image"

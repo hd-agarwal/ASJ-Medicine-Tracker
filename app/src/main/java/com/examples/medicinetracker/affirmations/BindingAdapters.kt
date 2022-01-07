@@ -30,7 +30,7 @@ import com.examples.medicinetracker.affirmations.network.Fact
 import com.examples.medicinetracker.affirmations.ui.main.*
 import com.examples.medicinetracker.affirmations.ui.main.AffirmationsAdapter
 import com.examples.medicinetracker.affirmations.ui.main.facts.FactsAdapter
-import com.examples.medicinetracker.affirmations.ui.main.facts.FactsStatus
+import com.examples.medicinetracker.affirmations.ui.main.FactsStatus
 
 @BindingAdapter("listData", "imageData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Affirmation>?, images: List<AffirmationImage>?) {
