@@ -18,8 +18,10 @@
     </style>
     <style name="btn_style_yes" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/button_background_color_yes</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <style name="btn_style_no" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/button_background_color_no</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
