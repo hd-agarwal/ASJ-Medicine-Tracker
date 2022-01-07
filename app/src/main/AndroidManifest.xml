@@ -24,11 +24,11 @@
             android:exported="true"
             android:theme="@style/Theme.MedicineTracker" />
         <activity
-            android:name=".HealthQuizActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.MedicineTracker"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".HealthQuizActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>

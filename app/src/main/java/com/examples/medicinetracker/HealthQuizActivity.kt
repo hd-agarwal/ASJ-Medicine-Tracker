@@ -3,6 +3,7 @@ package com.examples.medicinetracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -128,6 +129,7 @@ class HealthQuizActivity : AppCompatActivity() {
             getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                 .putBoolean("isFirstRun", false).apply()
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }
