@@ -15,16 +15,6 @@ class HealthQuizActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-            .getBoolean("isFirstRun", true)
-
-        if (!isFirstRun) {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
-
         val answerList = arrayOf<String>("", "", "", "", "")
         var name = ""
         var score = 0

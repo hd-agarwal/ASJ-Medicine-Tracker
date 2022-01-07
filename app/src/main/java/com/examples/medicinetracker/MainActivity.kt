@@ -1,11 +1,8 @@
 package com.examples.medicinetracker
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.view.View
 import android.widget.ImageButton
-
 import android.widget.ProgressBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.activity.viewModels
@@ -30,6 +27,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //      Removing Action Bar
         supportActionBar?.hide()
+
+        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .getBoolean("isFirstRun", true)
+
+        if (isFirstRun) {
+            startActivity(Intent(this, HealthQuizActivity::class.java))
+        }
+
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+            .putBoolean("isFirstRun", false).apply()
+
 //      Image Slider
         viewPager=findViewById(R.id.viewPager2)
         val imageList=listOf(R.drawable.quote1,R.drawable.quote2,R.drawable.quote3,R.drawable.quote4,R.drawable.quote5 )
