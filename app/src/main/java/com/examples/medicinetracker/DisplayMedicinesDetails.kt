@@ -7,53 +7,68 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class DisplayMedicinesDetails : AppCompatActivity() {
-    lateinit var allViewModel: AllInformationViewModel
-    var morningList: MutableList<MedicineInformation> = mutableListOf()
-    var afternoonList: MutableList<MedicineInformation> = mutableListOf()
-    var eveningList: MutableList<MedicineInformation> = mutableListOf()
-    lateinit var adp: DisplayMedicinesAdapter
-    lateinit var rcview: RecyclerView
+    private lateinit var allViewModel: AllInformationViewModel
+    private var morningList: MutableList<MedicineInformation> = mutableListOf()
+    private var afternoonList: MutableList<MedicineInformation> = mutableListOf()
+    private var eveningList: MutableList<MedicineInformation> = mutableListOf()
+    private lateinit var adp: DisplayMedicinesAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_medicines_details)
-        this.setTitle(intent.getStringExtra("time"))
-        rcview = findViewById(R.id.rvDetails)
+        this.title = when(intent.getStringExtra("time")){
+            "morning" -> {
+                "Morning"
+            }
+            "afternoon" -> {
+                "Afternoon"
+            }
+            "evening" -> {
+                "Evening"
+            }
+            else->{
+                "Medicines"
+            }
+        }+" schedule"
+        recyclerView = findViewById(R.id.rvDetails)
         allViewModel = AllInformationViewModel(application)
-        var time = intent.getStringExtra("time")
-        Log.d("TAG", "${time}")
-        lateinit var filteredlist: List<MedicineInformation>
+        val time = intent.getStringExtra("time")
+        Log.d("TAG", "$time")
 
         when (time) {
             "morning" -> {
                 Log.d("TAG", "inside morning")
-                adp = DisplayMedicinesAdapter(morningList)
+                adp = DisplayMedicinesAdapter(morningList,application,time)
             }
             "afternoon" -> {
                 Log.d("TAG", "inside afternoon")
-                adp = DisplayMedicinesAdapter(afternoonList)
+                adp = DisplayMedicinesAdapter(afternoonList,application,time)
             }
             "evening" -> {
                 Log.d("TAG", "inside evening")
-                adp = DisplayMedicinesAdapter(eveningList)
+                adp = DisplayMedicinesAdapter(eveningList,application,time)
             }
         }
 
-        rcview.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        rcview.adapter = adp
-        allViewModel.allMedicines.observe(this, androidx.lifecycle.Observer {
-            Log.d("TAG", "${it}")
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = adp
+        allViewModel.allMedicines.observe(this, {
+            Log.d("LIST ", "$it")
+            morningList.clear()
+            afternoonList.clear()
+            eveningList.clear()
             for (medObject in it) {
-                if (medObject.DoseMorning == true)
+                if (medObject.DoseMorning)
                     morningList.add(medObject)
-                if (medObject.DoseAfter == true)
+                if (medObject.DoseAfter)
                     afternoonList.add(medObject)
-                if (medObject.DoseEvening == true)
+                if (medObject.DoseEvening)
                     eveningList.add(medObject)
             }
-            Log.d("TAG", "${morningList}")
-            Log.d("TAG", "${afternoonList}")
-            Log.d("TAG", "${eveningList}")
+            Log.d("TAG", "$morningList")
+            Log.d("TAG", "$afternoonList")
+            Log.d("TAG", "$eveningList")
             adp.notifyDataSetChanged()
         })
         adp.notifyDataSetChanged()

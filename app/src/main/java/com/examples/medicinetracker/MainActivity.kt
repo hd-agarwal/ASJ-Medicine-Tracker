@@ -23,7 +23,7 @@ import com.examples.medicinetracker.affirmations.AffirmationsActivity
 
 class MainActivity : AppCompatActivity() {
     companion object{
-        val TAG="MainActivity";
+        const val TAG="MainActivity";
     }
     lateinit var allViewModel:AllInformationViewModel
     private lateinit var viewPager: ViewPager2
@@ -41,17 +41,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //      Removing Action Bar
         supportActionBar?.hide()
-
-        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-            .getBoolean("isFirstRun", true)
-
-        if (isFirstRun) {
-            startActivity(Intent(this, HealthQuizActivity::class.java))
-        }
-
-        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
-
 
         allViewModel = AllInformationViewModel(application)
 
@@ -75,6 +64,7 @@ class MainActivity : AppCompatActivity() {
             for (medObject in it) {
                 userName.setText(medObject.name.toString())
                 smileScore.setText(medObject.score.toString())
+                prog(medObject.score)
             }
         })
         allViewModel.allMedicines.observe(this, androidx.lifecycle.Observer {
@@ -160,9 +150,6 @@ class MainActivity : AppCompatActivity() {
         list.add("YOU BETTER NOT GIVE UP");
         list.add("COOOOOL");
         list.add("AMAZING");
-
-//        Progress Bar
-        prog(smileScore.getText().toString().toInt())
 
         // Color Change for the ProgressBar
 

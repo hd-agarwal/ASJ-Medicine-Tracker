@@ -3,7 +3,6 @@ package com.examples.medicinetracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -31,11 +30,12 @@ class HealthQuizActivity : AppCompatActivity() {
 
         if (!isFirstRun) {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
 
-        val answerList = arrayOf<String>("", "", "", "", "")
-        var name = ""
+        val answerList = arrayOf("", "", "", "", "")
+        var name: String
         var score = 0
         val background = binding.buttonQ1No.background
 
