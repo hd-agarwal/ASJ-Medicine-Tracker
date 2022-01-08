@@ -15,7 +15,6 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Add Medication"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
