@@ -150,8 +150,8 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addMedication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="18dp"
+            android:layout_height="17dp"
             android:layout_marginTop="16dp"
             android:clickable="true"
             app:backgroundTint="#E3A201"
@@ -165,10 +165,10 @@
             android:id="@+id/evening"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="32dp"
+
+
             android:backgroundTint="#EB9900"
+            app:layout_constraintBottom_toTopOf="@id/addMedication"
             android:text="EVENING"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/afternoon"
@@ -178,9 +178,11 @@
             android:id="@+id/afternoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="#EB9900"
+            app:layout_constraintEnd_toStartOf="@+id/evening"
+            app:layout_constraintBottom_toTopOf="@id/addMedication"
             android:text="AFTERNOON"
             app:layout_constraintStart_toEndOf="@+id/morning"
             app:layout_constraintTop_toBottomOf="@+id/addMedicines" />
