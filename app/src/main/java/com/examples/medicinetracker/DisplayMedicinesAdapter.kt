@@ -4,7 +4,7 @@ import android.app.Application
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,7 +15,7 @@ class DisplayMedicinesAdapter(val list: List<MedicineInformation>,val applicatio
     class MedicineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title: TextView = itemView.findViewById(R.id.title)
         var description: TextView = itemView.findViewById(R.id.description)
-        var btnDelete: ImageButton = itemView.findViewById(R.id.btnDelete)
+        var btnDelete: ImageView = itemView.findViewById(R.id.btnDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicineViewHolder {
