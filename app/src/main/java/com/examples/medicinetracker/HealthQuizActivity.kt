@@ -21,9 +21,6 @@ class HealthQuizActivity : AppCompatActivity() {
         installSplashScreen().apply {
             viewModel.isLoading.value
         }
-        val binding = HealthQuizLayoutBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        supportActionBar?.hide()
 
         val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
             .getBoolean("isFirstRun", true)
@@ -32,6 +29,10 @@ class HealthQuizActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+
+        val binding = HealthQuizLayoutBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.hide()
 
 
         val answerList = arrayOf("", "", "", "", "")

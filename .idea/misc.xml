@@ -4,13 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.12604166666666666" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.12604166666666666" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/activity_add_medication.xml" value="0.2175925925925926" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/activity_main.xml" value="0.2175925925925926" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/fragment_facts.xml" value="0.21574074074074073" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/main_fragment.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/HARSH/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/medicine_item.xml" value="0.21574074074074073" />
+        <entry key="..\:/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/checked.xml" value="0.26614583333333336" />
+        <entry key="..\:/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/details_popup.xml" value="0.13134057971014493" />
+        <entry key="..\:/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/layout/health_quiz_layout.xml" value="0.264" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/cross.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/star.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/varin/AndroidStudioProjects/ASJ-Medicine-Tracker/app/src/main/res/drawable/tick.xml" value="0.26614583333333336" />
@@ -34,7 +31,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
