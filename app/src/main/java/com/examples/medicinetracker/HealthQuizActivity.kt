@@ -4,19 +4,39 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.examples.medicinetracker.databinding.HealthQuizLayoutBinding
 
 
 class HealthQuizActivity : AppCompatActivity() {
+    lateinit var allViewModel: AllInformationViewModel
 
+    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        allViewModel = AllInformationViewModel(application)
+
+        //Splash Screen
+        installSplashScreen().apply {
+            viewModel.isLoading.value
+        }
+
+        val isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .getBoolean("isFirstRun", true)
+
+        if (!isFirstRun) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         val binding = HealthQuizLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
 
+
         val answerList = arrayOf("", "", "", "", "")
-        var name = ""
+        var name: String
         var score = 0
         val background = binding.buttonQ1No.background
 
@@ -80,9 +100,9 @@ class HealthQuizActivity : AppCompatActivity() {
         }
 
         fun calculateScore() {
-            for(answer in answerList){
-                if(answer == "yes")
-                    score+=20
+            for (answer in answerList) {
+                if (answer == "yes")
+                    score += 20
             }
         }
 
@@ -90,23 +110,27 @@ class HealthQuizActivity : AppCompatActivity() {
 
             name = binding.nameUser.text.toString()
 
-            if(name == ""){
+            if (name == "") {
                 val toastString = "Please, enter your Name to continue!"
                 Toast.makeText(this, toastString, Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
-            for(answer in answerList)
-            {
-                if(answer == ""){
+            for (answer in answerList) {
+                if (answer == "") {
                     val toastString = "Please, answer all questions to continue!"
                     Toast.makeText(this, toastString, Toast.LENGTH_LONG).show()
                     return@setOnClickListener
                 }
             }
-                calculateScore()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+            calculateScore()
+
+            val userInformation = UserInformation(name, score)
+            allViewModel.insertName(userInformation)
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).apply()
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

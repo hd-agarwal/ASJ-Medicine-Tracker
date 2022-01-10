@@ -32,7 +32,7 @@ class AffirmationsAdapter(
     }
 
     override fun getItemCount(): Int {
-        return affirmationImages.size + affirmations.size
+        return affirmationImages.size
     }
 
     class AffirmationViewHolder(private val binding: GridViewItemBinding) : RecyclerView.ViewHolder(binding.root) {

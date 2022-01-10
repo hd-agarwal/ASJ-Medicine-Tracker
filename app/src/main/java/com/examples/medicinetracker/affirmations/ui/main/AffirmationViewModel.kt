@@ -100,9 +100,9 @@ class AffirmationViewModel : ViewModel() {
                     val oneFact: Fact = FactsApi.retrofitService.getContents().contents
                     listOfFacts.add(oneFact)
                     _facts.value = listOfFacts
+                    _factsStatus.value = FactsStatus.DONE
                 }
                 _facts.value = listOfFacts
-                _factsStatus.value = FactsStatus.DONE
             } catch (e: Exception) {
                 _factsStatus.value = FactsStatus.ERROR
                 _facts = MutableLiveData()
