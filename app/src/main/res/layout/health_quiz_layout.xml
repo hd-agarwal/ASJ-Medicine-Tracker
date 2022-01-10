@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_bold"
+            android:padding="4dp"
             android:text="@string/heading"
             android:textAlignment="center"
             android:textSize="20sp"
